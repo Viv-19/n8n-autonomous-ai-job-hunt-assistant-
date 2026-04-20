@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Env variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+n8n-docker/.env
+ai-job-hunt-ui/.env
+*.cert
+*.key
+
+# Builds
+dist/
+build/
+output/
+coverage/
+
+# Misc
+.DS_Store
+.vscode/
+.idea/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.git/
+.gemini/
+
+# n8n Database files
+n8n-docker/n8n_data/

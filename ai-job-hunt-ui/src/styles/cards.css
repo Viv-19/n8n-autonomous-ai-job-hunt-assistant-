@@ -1,0 +1,329 @@
+/* =============================================================================
+   Card Component Styles
+   ============================================================================= */
+
+/* --- Base Card --- */
+.card {
+  background: var(--gradient-card);
+  border: var(--border-subtle);
+  border-radius: var(--border-radius);
+  padding: var(--space-lg);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  border-color: rgba(108, 99, 255, 0.25);
+}
+
+/* --- Draft Preview Card --- */
+.draft-card {
+  background: var(--gradient-card);
+  border: 1px solid rgba(108, 99, 255, 0.2);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  animation: fadeInUp var(--transition-slow) ease forwards;
+  max-width: 600px;
+  margin: var(--space-sm) 0;
+}
+
+.draft-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(108, 99, 255, 0.08);
+  border-bottom: 1px solid rgba(108, 99, 255, 0.1);
+}
+
+.draft-card__header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.draft-card__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--border-radius-sm);
+  background: var(--gradient-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+}
+
+.draft-card__title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.draft-card__status {
+  font-size: var(--font-size-xs);
+  padding: 2px 10px;
+  border-radius: var(--border-radius-pill);
+  font-weight: 500;
+}
+
+.draft-card__status--pending {
+  background: rgba(255, 167, 38, 0.15);
+  color: var(--accent-warning);
+}
+
+.draft-card__status--sent {
+  background: rgba(0, 212, 170, 0.15);
+  color: var(--accent-secondary);
+}
+
+.draft-card__status--rejected {
+  background: rgba(239, 83, 80, 0.15);
+  color: var(--accent-danger);
+}
+
+.draft-card__body {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.draft-card__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.draft-card__label {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.draft-card__value {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.draft-card__value--email {
+  color: var(--text-accent);
+}
+
+.draft-card__email-body {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding: var(--space-md);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid rgba(255,255,255,0.04);
+  white-space: pre-wrap;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.draft-card__attachment {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(0, 212, 170, 0.08);
+  border: 1px solid rgba(0, 212, 170, 0.15);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-xs);
+  color: var(--accent-secondary);
+}
+
+.draft-card__attachment-icon {
+  font-size: var(--font-size-base);
+}
+
+.draft-card__actions {
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  border-top: 1px solid rgba(255,255,255,0.04);
+  background: rgba(0,0,0,0.15);
+}
+
+/* --- Calendar Confirm Card --- */
+.calendar-card {
+  background: var(--gradient-card);
+  border: 1px solid rgba(0, 212, 170, 0.2);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  animation: fadeInUp var(--transition-slow) ease forwards;
+  max-width: 500px;
+  margin: var(--space-sm) 0;
+}
+
+.calendar-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(0, 212, 170, 0.08);
+  border-bottom: 1px solid rgba(0, 212, 170, 0.1);
+}
+
+.calendar-card__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--border-radius-sm);
+  background: var(--gradient-success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+}
+
+.calendar-card__title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.calendar-card__body {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.calendar-card__detail {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.calendar-card__detail-icon {
+  font-size: var(--font-size-base);
+  opacity: 0.7;
+  width: 24px;
+  text-align: center;
+}
+
+.calendar-card__detail-label {
+  color: var(--text-muted);
+  min-width: 60px;
+}
+
+.calendar-card__detail-value {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.calendar-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--accent-secondary);
+  text-decoration: none;
+  font-size: var(--font-size-xs);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(0, 212, 170, 0.08);
+  border-radius: var(--border-radius-sm);
+  transition: background var(--transition-fast);
+  align-self: flex-start;
+}
+
+.calendar-card__link:hover {
+  background: rgba(0, 212, 170, 0.15);
+}
+
+/* --- Conflict Warning Card --- */
+.conflict-card {
+  background: var(--gradient-card);
+  border: 1px solid rgba(255, 167, 38, 0.25);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  animation: fadeInUp var(--transition-slow) ease forwards;
+  max-width: 500px;
+  margin: var(--space-sm) 0;
+}
+
+.conflict-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(255, 167, 38, 0.08);
+  border-bottom: 1px solid rgba(255, 167, 38, 0.1);
+}
+
+.conflict-card__title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--accent-warning);
+}
+
+.conflict-card__body {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.conflict-card__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(255, 167, 38, 0.05);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.conflict-card__suggestion {
+  font-size: var(--font-size-sm);
+  color: var(--text-accent);
+  padding: var(--space-sm) 0;
+  font-style: italic;
+}
+
+/* --- Activity Card --- */
+.activity-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--border-radius-sm);
+  transition: background var(--transition-fast);
+  cursor: default;
+}
+
+.activity-card:hover {
+  background: var(--bg-hover);
+}
+
+.activity-card__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.activity-card__dot--email { background: var(--accent-primary); }
+.activity-card__dot--calendar { background: var(--accent-secondary); }
+.activity-card__dot--log { background: var(--accent-info); }
+.activity-card__dot--error { background: var(--accent-danger); }
+
+.activity-card__text {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.activity-card__time {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
