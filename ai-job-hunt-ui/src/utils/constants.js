@@ -42,12 +42,12 @@ export const DRAFT_STATUS = {
 
 // Quick action suggestions for empty chat
 export const SUGGESTIONS = [
-  { text: '✉️ Send email to a recruiter', command: 'Send an email to ' },
-  { text: '📅 Schedule a meeting', command: 'Schedule a meeting on ' },
-  { text: '📋 Show activity log', command: 'Show my recent activity log' },
-  { text: '👥 View contacts', command: 'Show my contacts list' },
-  { text: '📝 Draft a follow-up', command: 'Draft a follow-up email to ' },
-  { text: '🔍 Check calendar', command: 'What meetings do I have this week?' },
+  { text: 'Send email to a recruiter', command: 'Send an email to ' },
+  { text: 'Schedule a meeting', command: 'Schedule a meeting on ' },
+  { text: 'Show activity log', command: 'Show my recent activity log' },
+  { text: 'View contacts', command: 'Show my contacts list' },
+  { text: 'Draft a follow-up', command: 'Draft a follow-up email to ' },
+  { text: 'Check calendar', command: 'What meetings do I have this week?' },
 ];
 
 // Activity type to dot color mapping

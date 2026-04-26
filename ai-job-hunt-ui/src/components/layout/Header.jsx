@@ -4,6 +4,7 @@
 
 import { useApp } from '../../context/AppContext';
 import { useN8nConnection } from '../../hooks/useN8nConnection';
+import { MenuIcon, BriefcaseIcon } from '../common/Icons';
 
 export default function Header() {
   const { toggleSidebar } = useApp();
@@ -18,10 +19,12 @@ export default function Header() {
           aria-label="Toggle sidebar"
           id="sidebar-toggle"
         >
-          ☰
+          <MenuIcon size={20} />
         </button>
         <div className="header__logo">
-          <div className="header__logo-icon">🎯</div>
+          <div className="header__logo-icon">
+            <BriefcaseIcon size={18} stroke="#ffffff" />
+          </div>
           <span className="header__logo-text">JobHunt AI</span>
           <span className="header__logo-badge">Assistant</span>
         </div>
@@ -31,7 +34,7 @@ export default function Header() {
           <span
             className={`header__status-dot header__status-dot--${isConnected ? 'connected' : 'disconnected'}`}
           />
-          <span>
+          <span className="header__status-label">
             {connectionStatus === 'checking'
               ? 'Connecting...'
               : isConnected

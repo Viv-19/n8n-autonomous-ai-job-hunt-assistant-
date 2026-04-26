@@ -3,6 +3,7 @@
 // =============================================================================
 
 import { DRAFT_STATUS } from '../../utils/constants';
+import { MailIcon, PaperclipIcon, CheckIcon, XIcon } from '../common/Icons';
 
 export default function DraftPreviewCard({ draft, status, onApprove, onReject }) {
   if (!draft) return null;
@@ -27,7 +28,9 @@ export default function DraftPreviewCard({ draft, status, onApprove, onReject })
       {/* Header */}
       <div className="draft-card__header">
         <div className="draft-card__header-left">
-          <div className="draft-card__icon">✉️</div>
+          <div className="draft-card__icon">
+            <MailIcon size={16} stroke="#ffffff" />
+          </div>
           <span className="draft-card__title">Email Draft</span>
         </div>
         <span className={`draft-card__status draft-card__status--${statusClass[status]}`}>
@@ -65,7 +68,7 @@ export default function DraftPreviewCard({ draft, status, onApprove, onReject })
         {/* Attachment */}
         {draft.attachmentName && (
           <div className="draft-card__attachment">
-            <span className="draft-card__attachment-icon">📎</span>
+            <PaperclipIcon size={14} />
             <span>{draft.attachmentName}</span>
           </div>
         )}
@@ -80,7 +83,7 @@ export default function DraftPreviewCard({ draft, status, onApprove, onReject })
             disabled={isSending}
             id="approve-draft-btn"
           >
-            <span className="btn__icon">✓</span>
+            <CheckIcon size={15} />
             Approve & Send
           </button>
           <button
@@ -89,7 +92,7 @@ export default function DraftPreviewCard({ draft, status, onApprove, onReject })
             disabled={isSending}
             id="reject-draft-btn"
           >
-            <span className="btn__icon">✗</span>
+            <XIcon size={15} />
             Reject
           </button>
         </div>

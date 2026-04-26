@@ -8,6 +8,7 @@ import TypingIndicator from './TypingIndicator';
 import DraftPreviewCard from '../cards/DraftPreviewCard';
 import CalendarConfirmCard from '../cards/CalendarConfirmCard';
 import ConflictWarningCard from '../cards/ConflictWarningCard';
+import { SparklesIcon } from '../common/Icons';
 import { SUGGESTIONS } from '../../utils/constants';
 
 export default function ChatFeed({
@@ -36,7 +37,9 @@ export default function ChatFeed({
     return (
       <div className="chat-feed" ref={feedRef} id="chat-feed">
         <div className="chat-feed__empty">
-          <div className="chat-feed__empty-icon">🎯</div>
+          <div className="chat-feed__empty-icon">
+            <SparklesIcon size={32} stroke="var(--accent-primary)" />
+          </div>
           <h2 className="chat-feed__empty-title">Welcome to JobHunt AI</h2>
           <p className="chat-feed__empty-subtitle">
             I can help you draft professional emails, schedule meetings, 

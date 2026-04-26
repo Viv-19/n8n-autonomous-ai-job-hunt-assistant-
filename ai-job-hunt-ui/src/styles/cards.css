@@ -1,87 +1,91 @@
 /* =============================================================================
-   Card Component Styles
+   Card Component Styles — Gentle Peach Theme
    ============================================================================= */
 
 /* --- Base Card --- */
 .card {
-  background: var(--gradient-card);
+  background: var(--bg-card);
   border: var(--border-subtle);
   border-radius: var(--border-radius);
   padding: var(--space-lg);
   transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
 }
 
 .card:hover {
-  border-color: rgba(108, 99, 255, 0.25);
+  border-color: rgba(212, 117, 78, 0.2);
+  box-shadow: var(--shadow-md);
 }
 
 /* --- Draft Preview Card --- */
 .draft-card {
-  background: var(--gradient-card);
-  border: 1px solid rgba(108, 99, 255, 0.2);
+  background: var(--bg-card);
+  border: 1px solid rgba(212, 117, 78, 0.15);
   border-radius: var(--border-radius);
   overflow: hidden;
   animation: fadeInUp var(--transition-slow) ease forwards;
-  max-width: 600px;
+  max-width: 580px;
   margin: var(--space-sm) 0;
+  box-shadow: var(--shadow-md);
 }
 
 .draft-card__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-md) var(--space-lg);
-  background: rgba(108, 99, 255, 0.08);
-  border-bottom: 1px solid rgba(108, 99, 255, 0.1);
+  padding: 10px var(--space-md);
+  background: rgba(212, 117, 78, 0.05);
+  border-bottom: 1px solid rgba(212, 117, 78, 0.08);
 }
 
 .draft-card__header-left {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 10px;
 }
 
 .draft-card__icon {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: var(--border-radius-sm);
   background: var(--gradient-brand);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-size-sm);
 }
 
 .draft-card__title {
   font-size: var(--font-size-sm);
   font-weight: 600;
   color: var(--text-primary);
+  letter-spacing: -0.1px;
 }
 
 .draft-card__status {
   font-size: var(--font-size-xs);
   padding: 2px 10px;
   border-radius: var(--border-radius-pill);
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.2px;
 }
 
 .draft-card__status--pending {
-  background: rgba(255, 167, 38, 0.15);
+  background: rgba(212, 148, 58, 0.1);
   color: var(--accent-warning);
 }
 
 .draft-card__status--sent {
-  background: rgba(0, 212, 170, 0.15);
+  background: rgba(90, 158, 124, 0.1);
   color: var(--accent-secondary);
 }
 
 .draft-card__status--rejected {
-  background: rgba(239, 83, 80, 0.15);
+  background: rgba(201, 80, 68, 0.08);
   color: var(--accent-danger);
 }
 
 .draft-card__body {
-  padding: var(--space-lg);
+  padding: var(--space-md);
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
@@ -90,21 +94,21 @@
 .draft-card__field {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: 3px;
 }
 
 .draft-card__label {
   font-size: var(--font-size-xs);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
 }
 
 .draft-card__value {
   font-size: var(--font-size-sm);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 .draft-card__value--email {
@@ -116,9 +120,9 @@
   color: var(--text-secondary);
   line-height: 1.7;
   padding: var(--space-md);
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--bg-primary);
   border-radius: var(--border-radius-sm);
-  border: 1px solid rgba(255,255,255,0.04);
+  border: var(--border-subtle);
   white-space: pre-wrap;
   max-height: 200px;
   overflow-y: auto;
@@ -127,89 +131,92 @@
 .draft-card__attachment {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-md);
-  background: rgba(0, 212, 170, 0.08);
-  border: 1px solid rgba(0, 212, 170, 0.15);
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(90, 158, 124, 0.06);
+  border: 1px solid rgba(90, 158, 124, 0.12);
   border-radius: var(--border-radius-sm);
   font-size: var(--font-size-xs);
   color: var(--accent-secondary);
-}
-
-.draft-card__attachment-icon {
-  font-size: var(--font-size-base);
+  font-weight: 500;
 }
 
 .draft-card__actions {
   display: flex;
   gap: var(--space-sm);
-  padding: var(--space-md) var(--space-lg);
-  border-top: 1px solid rgba(255,255,255,0.04);
-  background: rgba(0,0,0,0.15);
+  padding: 10px var(--space-md);
+  border-top: var(--border-subtle);
+  background: var(--bg-surface);
 }
 
 /* --- Calendar Confirm Card --- */
 .calendar-card {
-  background: var(--gradient-card);
-  border: 1px solid rgba(0, 212, 170, 0.2);
+  background: var(--bg-card);
+  border: 1px solid rgba(90, 158, 124, 0.15);
   border-radius: var(--border-radius);
   overflow: hidden;
   animation: fadeInUp var(--transition-slow) ease forwards;
-  max-width: 500px;
+  max-width: 480px;
   margin: var(--space-sm) 0;
+  box-shadow: var(--shadow-md);
 }
 
 .calendar-card__header {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-md) var(--space-lg);
-  background: rgba(0, 212, 170, 0.08);
-  border-bottom: 1px solid rgba(0, 212, 170, 0.1);
+  gap: 10px;
+  padding: 10px var(--space-md);
+  background: rgba(90, 158, 124, 0.05);
+  border-bottom: 1px solid rgba(90, 158, 124, 0.08);
 }
 
 .calendar-card__icon {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: var(--border-radius-sm);
   background: var(--gradient-success);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-size-sm);
 }
 
 .calendar-card__title {
   font-size: var(--font-size-sm);
   font-weight: 600;
   color: var(--text-primary);
+  letter-spacing: -0.1px;
 }
 
 .calendar-card__body {
-  padding: var(--space-lg);
+  padding: var(--space-md);
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-sm);
 }
 
 .calendar-card__detail {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 10px;
   font-size: var(--font-size-sm);
   color: var(--text-secondary);
 }
 
 .calendar-card__detail-icon {
-  font-size: var(--font-size-base);
-  opacity: 0.7;
-  width: 24px;
-  text-align: center;
+  opacity: 0.5;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .calendar-card__detail-label {
   color: var(--text-muted);
-  min-width: 60px;
+  min-width: 50px;
+  font-weight: 500;
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
 }
 
 .calendar-card__detail-value {
@@ -220,39 +227,42 @@
 .calendar-card__link {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: 6px;
   color: var(--accent-secondary);
   text-decoration: none;
   font-size: var(--font-size-xs);
-  padding: var(--space-sm) var(--space-md);
-  background: rgba(0, 212, 170, 0.08);
+  font-weight: 500;
+  padding: 6px 12px;
+  background: rgba(90, 158, 124, 0.06);
   border-radius: var(--border-radius-sm);
   transition: background var(--transition-fast);
   align-self: flex-start;
+  margin-top: var(--space-xs);
 }
 
 .calendar-card__link:hover {
-  background: rgba(0, 212, 170, 0.15);
+  background: rgba(90, 158, 124, 0.12);
 }
 
 /* --- Conflict Warning Card --- */
 .conflict-card {
-  background: var(--gradient-card);
-  border: 1px solid rgba(255, 167, 38, 0.25);
+  background: var(--bg-card);
+  border: 1px solid rgba(212, 148, 58, 0.18);
   border-radius: var(--border-radius);
   overflow: hidden;
   animation: fadeInUp var(--transition-slow) ease forwards;
-  max-width: 500px;
+  max-width: 480px;
   margin: var(--space-sm) 0;
+  box-shadow: var(--shadow-md);
 }
 
 .conflict-card__header {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-md) var(--space-lg);
-  background: rgba(255, 167, 38, 0.08);
-  border-bottom: 1px solid rgba(255, 167, 38, 0.1);
+  gap: 10px;
+  padding: 10px var(--space-md);
+  background: rgba(212, 148, 58, 0.05);
+  border-bottom: 1px solid rgba(212, 148, 58, 0.08);
 }
 
 .conflict-card__title {
@@ -262,7 +272,7 @@
 }
 
 .conflict-card__body {
-  padding: var(--space-lg);
+  padding: var(--space-md);
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
@@ -271,9 +281,9 @@
 .conflict-card__item {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-md);
-  background: rgba(255, 167, 38, 0.05);
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(212, 148, 58, 0.04);
   border-radius: var(--border-radius-sm);
   font-size: var(--font-size-sm);
   color: var(--text-secondary);
@@ -290,8 +300,8 @@
 .activity-card {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-md);
+  gap: 10px;
+  padding: 6px 10px;
   border-radius: var(--border-radius-sm);
   transition: background var(--transition-fast);
   cursor: default;
@@ -302,8 +312,8 @@
 }
 
 .activity-card__dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -326,4 +336,5 @@
   font-size: var(--font-size-xs);
   color: var(--text-muted);
   white-space: nowrap;
+  font-weight: 450;
 }

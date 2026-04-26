@@ -5,6 +5,7 @@
 import { useApp } from '../../context/AppContext';
 import { formatRelativeTime, formatActivityType, truncate } from '../../utils/formatters';
 import { ACTIVITY_COLORS, SUGGESTIONS } from '../../utils/constants';
+import { MailIcon, CalendarIcon, ListIcon, UsersIcon, TrashIcon } from '../common/Icons';
 
 export default function Sidebar({ onQuickAction }) {
   const { state, clearMessages } = useApp();
@@ -21,7 +22,9 @@ export default function Sidebar({ onQuickAction }) {
             onClick={() => onQuickAction('Send an email to ')}
             id="action-send-email"
           >
-            <span className="sidebar__action-icon">✉️</span>
+            <span className="sidebar__action-icon">
+              <MailIcon size={16} />
+            </span>
             Send Email
           </button>
           <button
@@ -29,7 +32,9 @@ export default function Sidebar({ onQuickAction }) {
             onClick={() => onQuickAction('Schedule a meeting on ')}
             id="action-schedule-meeting"
           >
-            <span className="sidebar__action-icon">📅</span>
+            <span className="sidebar__action-icon">
+              <CalendarIcon size={16} />
+            </span>
             Schedule Meeting
           </button>
           <button
@@ -37,7 +42,9 @@ export default function Sidebar({ onQuickAction }) {
             onClick={() => onQuickAction('Show my recent activity log')}
             id="action-view-logs"
           >
-            <span className="sidebar__action-icon">📋</span>
+            <span className="sidebar__action-icon">
+              <ListIcon size={16} />
+            </span>
             View Activity Log
           </button>
           <button
@@ -45,7 +52,9 @@ export default function Sidebar({ onQuickAction }) {
             onClick={() => onQuickAction('Show my contacts list')}
             id="action-view-contacts"
           >
-            <span className="sidebar__action-icon">👥</span>
+            <span className="sidebar__action-icon">
+              <UsersIcon size={16} />
+            </span>
             View Contacts
           </button>
         </div>
@@ -80,12 +89,13 @@ export default function Sidebar({ onQuickAction }) {
       {/* Session */}
       <div className="sidebar__section" style={{ marginTop: 'auto' }}>
         <button
-          className="sidebar__action"
+          className="sidebar__action sidebar__action--danger"
           onClick={clearMessages}
           id="action-clear-chat"
-          style={{ color: 'var(--text-muted)' }}
         >
-          <span className="sidebar__action-icon">🗑️</span>
+          <span className="sidebar__action-icon">
+            <TrashIcon size={16} />
+          </span>
           Clear Chat
         </button>
       </div>
